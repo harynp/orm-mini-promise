@@ -1,15 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Halaman List Projects</title>
 </head>
+
 <body>
     <thead>
         <tr>
             <td>ID</td>
             <td>Nama Projects</td>
+            <td>Status</td>
         </tr>
     </thead>
+    <% data.forEach(row => { %>
+        <tbody>
+            <tr>
+                <td>
+                    <%=row.id%>
+                </td>
+                <td>
+                    <%=row.name%>
+                </td>
+                <td>
+                    <select>
+                    <option value="<%=row.status%>">ON</option>
+                    </select>
+                </td>
+        </tbody>
 </body>
+
 </html>
