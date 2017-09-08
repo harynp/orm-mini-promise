@@ -8,8 +8,8 @@ class Projects {
         this.status = obj.status;
     }
 
-    static getAll() {
-        let promise = new Promise((resolve, reject) => {
+    static findAll() {
+        return new Promise((resolve, reject) => {
             db.all(`SELECT * FROM Projects`, (err, rows) => {
                 if (!err) {
                     resolve(rows)
@@ -18,8 +18,22 @@ class Projects {
                 }
             })
         })
-        return promise;
     }
+
+    static findById(id){
+        return new Promise((resolve, reject) => {
+          db.all(`SELECT * FROM Projects WHERE id = ${id}`,(err,row)=>{
+            if(!err){
+              resolve(row)
+            } else {
+              reject(err)
+            }
+          })
+        })
+      }
+
+
+
 
 }
 

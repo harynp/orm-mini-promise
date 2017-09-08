@@ -14,17 +14,17 @@ app.use(bodyParser.json())
 // GET  /update/:id  * form untuk update project
 // POST /update/:id  * untuk handle update project
 // GET  /delete/:id  * untuk handle delete project
+
+
 let list = require('./routes/list');
-app.use('/list', list);
+app.use('/', list);
 
 // var users = require('./routes/users');
 // let supervisor = require('./routes/index')
+let list = require('./routes/supervisor');
+app.use('supervisor', list);
+)
 
-
-
-// app.get('/', (req,res)=>{
-//     res.render('index')
-// })
 
 // app.get('/list', (req,res)=>{
 //     res.render('list')

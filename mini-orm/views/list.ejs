@@ -1,34 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <title>Halaman List Projects</title>
 </head>
 
 <body>
+    <table>
     <thead>
+
         <tr>
-            <td>ID</td>
-            <td>Nama Projects</td>
-            <td>Status</td>
+              <select>
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="mercedes">Mercedes</option>
+                <option value="audi">Audi</option>
+              </select> 
         </tr>
+
+        <a href="/list">Supervisor</a>
     </thead>
-    <% data.forEach(row => { %>
-        <tbody>
-            <tr>
-                <td>
-                    <%=row.id%>
-                </td>
-                <td>
-                    <%=row.name%>
-                </td>
-                <td>
-                    <select>
-                    <option value="<%=row.status%>">ON</option>
-                    </select>
-                </td>
+    </table>
         </tbody>
 </body>
-
 </html>
