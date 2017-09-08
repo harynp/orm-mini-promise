@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HALAMAN SUPERVISOR</title>
+  </head>
+  <body>
+    <h2>Data SUpervisor</h2>
+    <table border="1">
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+      </tr>
+      <% data.forEach(row => { %>
+      <tr>
+        <td><%=row.id%></td>
+        <td><%=row.name%></td>
+        <td><%=row.email%></td>
+        <td></td>
+        <td>
+          <a href="/contacts/edit/<%=row.id%>">EDIT</a> |
+          <a href="/contacts/delete/<%=row.id%>">DELETE</a> |
+        </td>
+      </tr>
+      <% }) %>
+    </table>
+
+    <hr>
+    <h2>Add New Supervisor</h2>
+    <form class="" action="/supervisor" method="POST">
+      <input type="text" name="name" value="" placeholder="name">
+      <input type="text" name="email" value="" placeholder="email">
+      <input type="submit" value="SAVE">
+    </form>
+  </body>
+</html>

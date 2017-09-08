@@ -20,21 +20,34 @@ class Projects {
         })
     }
 
-    static findById(id){
+    static findById(id) {
         return new Promise((resolve, reject) => {
-          db.all(`SELECT * FROM Projects WHERE id = ${id}`,(err,row)=>{
-            if(!err){
-              resolve(row)
-            } else {
-              reject(err)
-            }
-          })
+            db.all(`SELECT * FROM Projects WHERE id = ${id}`, (err, row) => {
+                if (!err) {
+                    resolve(row)
+                } else {
+                    reject(err)
+                }
+            })
         })
-      }
+    }
 
+    static create(id) {
+        return new Promise((resolve, reject) => {
+            db.run(`INSERT INTO Projects (name,status)
+                VALUES ('${reg.body.name}','${reg.body.status}')`, (err) => {
+                if (!err) {
+                    resolve('Insert Success')
+                } else {
+                    reject(err)
+                }
+            })
+        })
+    }
 
 
 
 }
+
 
 module.exports = Projects
